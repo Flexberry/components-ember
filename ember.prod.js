@@ -36552,7 +36552,7 @@ enifed('ember-runtime/system/string', ['exports', 'ember-metal/debug', 'ember-me
   });
 
   var STRING_CAMELIZE_REGEXP_1 = /(\-|\_|\.|\s)+(.)?/g;
-  var STRING_CAMELIZE_REGEXP_2 = /(^|\/)([A-Z])/g;
+  var STRING_CAMELIZE_REGEXP_2 = /(^|\/)([A-ZА-Я])/g;
 
   var CAMELIZE_CACHE = new _emberMetalCache.default(1000, function (key) {
     return key.replace(STRING_CAMELIZE_REGEXP_1, function (match, separator, chr) {
@@ -36564,7 +36564,7 @@ enifed('ember-runtime/system/string', ['exports', 'ember-metal/debug', 'ember-me
 
   var STRING_CLASSIFY_REGEXP_1 = /^(\-|_)+(.)?/;
   var STRING_CLASSIFY_REGEXP_2 = /(.)(\-|\_|\.|\s)+(.)?/g;
-  var STRING_CLASSIFY_REGEXP_3 = /(^|\/|\.)([a-z])/g;
+  var STRING_CLASSIFY_REGEXP_3 = /(^|\/|\.)([a-zа-я])/g;
 
   var CLASSIFY_CACHE = new _emberMetalCache.default(1000, function (str) {
     var replace1 = function (match, separator, chr) {
@@ -36582,14 +36582,14 @@ enifed('ember-runtime/system/string', ['exports', 'ember-metal/debug', 'ember-me
     });
   });
 
-  var STRING_UNDERSCORE_REGEXP_1 = /([a-z\d])([A-Z]+)/g;
+  var STRING_UNDERSCORE_REGEXP_1 = /([a-zа-я\d])([A-ZА-Я]+)/g;
   var STRING_UNDERSCORE_REGEXP_2 = /\-|\s+/g;
 
   var UNDERSCORE_CACHE = new _emberMetalCache.default(1000, function (str) {
     return str.replace(STRING_UNDERSCORE_REGEXP_1, '$1_$2').replace(STRING_UNDERSCORE_REGEXP_2, '_').toLowerCase();
   });
 
-  var STRING_CAPITALIZE_REGEXP = /(^|\/)([a-z])/g;
+  var STRING_CAPITALIZE_REGEXP = /(^|\/)([a-zа-я])/g;
 
   var CAPITALIZE_CACHE = new _emberMetalCache.default(1000, function (str) {
     return str.replace(STRING_CAPITALIZE_REGEXP, function (match, separator, chr) {
@@ -36597,7 +36597,7 @@ enifed('ember-runtime/system/string', ['exports', 'ember-metal/debug', 'ember-me
     });
   });
 
-  var STRING_DECAMELIZE_REGEXP = /([a-z\d])([A-Z])/g;
+  var STRING_DECAMELIZE_REGEXP = /([a-zа-я\d])([A-ZА-Я])/g;
 
   var DECAMELIZE_CACHE = new _emberMetalCache.default(1000, function (str) {
     return str.replace(STRING_DECAMELIZE_REGEXP, '$1_$2').toLowerCase();
